@@ -1,14 +1,12 @@
 .wrapper {
   display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  padding: 20px;
+}
 
-  @media (min-width: 768px) {
-    padding: 30px;
-  }
-
-  @media (min-width: 992px) {
-    padding: 42px;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

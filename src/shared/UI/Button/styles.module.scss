@@ -1,5 +1,5 @@
 .button {
-  padding: 11.5px 17.25px;
+  padding-block: 11.5px 17.25px;
   font-size: 11.5px;
   border-radius: 11.5px;
   line-height: 17.25px;
@@ -12,8 +12,21 @@
   }
 
   &.special {
+    font-family: 'Poppins', sans-serif;
     border-radius: 8.83px;
     font-weight: 500;
+
+    padding-block: 15px;
+    padding-inline: 21px;
+
+    @media (min-width: 768px) {
+      padding-block: 12px;
+    }
+
+    @media (min-width: 992px) {
+      padding-block: 18px;
+      padding-inline: 30px;
+    }
   }
 
   &:not(.outline) {
@@ -31,5 +44,20 @@
     border-color: var(--color-secondary-10);
     color: var(--color-secondary-10);
     background: transparent;
+    padding-block: 15px;
+    padding-inline: 15px;
+
+    @media (min-width: 768px) {
+      padding-block: 12px;
+    }
+
+    @media (min-width: 992px) {
+      padding-block: 18px;
+      padding-inline: 21px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16.27px;
   }
 }

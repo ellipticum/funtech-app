@@ -1,0 +1,30 @@
+.bullet {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 46.36px;
+  }
+}
+
+.item {
+  font-family: 'Public Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 3.93px;
+}
+
+.value {
+  font-size: 26.15px;
+  line-height: 32.69px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.name {
+  color: var(--color-medium-20);
+  font-size: 8.72px;
+  line-height: 13.08px;
+  font-weight: 500;
+}

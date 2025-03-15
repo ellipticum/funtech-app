@@ -1,0 +1,78 @@
+.introImages {
+  display: flex;
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+  margin-inline: -27px;
+
+  @media (min-width: 768px) {
+    width: 570px;
+    height: 400px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 720px;
+    height: 500px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+}
+
+.image,
+.ornament,
+.arrow {
+  position: absolute;
+}
+
+.first {
+  top: 10px;
+  left: 30px;
+  width: 208.49px;
+  height: 223.16px;
+
+  @media (min-width: 768px) {
+    width: 278px;
+    height: 280px;
+    top: 13px;
+    left: 0;
+  }
+
+  @media (min-width: 1200px) {
+    width: 391px;
+    height: 394px;
+  }
+}
+
+.second {
+  top: 106px;
+  left: 259px;
+  width: 170.89px;
+  height: 182.89px;
+
+  @media (min-width: 768px) {
+    width: 226px;
+    height: 229px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 319px;
+    height: 322px;
+  }
+}
+
+.ornament {
+  width: 92px;
+  height: 213px;
+  left: 328px;
+}
+
+.arrow {
+  width: 58px;
+  height: 56px;
+  left: 248px;
+  top: 40px;
+}

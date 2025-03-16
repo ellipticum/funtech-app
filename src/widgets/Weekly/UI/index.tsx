@@ -28,42 +28,42 @@ const Weekly: React.FC = () => {
         {
             id: 1,
             name: 'Cosmic Dreamer #1',
-            image: 'nft1.jpg',
+            image: 'nft-1.jpeg',
             price: generateRandomPrice(),
             ...generateTimeframe()
         },
         {
             id: 2,
             name: 'Digital Soul #42',
-            image: 'nft2.jpg',
+            image: 'nft-2.jpeg',
             price: generateRandomPrice(),
             ...generateTimeframe()
         },
         {
             id: 3,
             name: 'Neon Genesis #7',
-            image: 'nft3.jpg',
+            image: 'nft-3.jpeg',
             price: generateRandomPrice(),
             ...generateTimeframe()
         },
         {
             id: 4,
             name: 'Abstract Realm #23',
-            image: 'nft4.jpg',
+            image: 'nft-4.jpeg',
             price: generateRandomPrice(),
             ...generateTimeframe()
         },
         {
             id: 5,
             name: 'Virtual Landscape #11',
-            image: 'nft5.jpg',
+            image: 'nft-5.jpeg',
             price: generateRandomPrice(),
             ...generateTimeframe()
         },
         {
             id: 6,
             name: 'Crypto Punk #301',
-            image: 'nft6.jpg',
+            image: 'nft-3.jpeg',
             price: generateRandomPrice(),
             ...generateTimeframe()
         }
@@ -297,10 +297,6 @@ const Weekly: React.FC = () => {
             <h2 className={styles.heading}>Weekly - Top NFT</h2>
 
             <div className={styles.swiperContainer}>
-                <div className={styles.navButton} onClick={() => navigate('prev')}>
-                    &lt;
-                </div>
-
                 <div className={styles.swiperWrapper}>
                     <div
                         ref={swiperRef}
@@ -327,21 +323,26 @@ const Weekly: React.FC = () => {
                         ))}
                     </div>
                 </div>
+            </div>
 
+            <div className={styles.navButtons}>
+                <div className={styles.navButton} onClick={() => navigate('prev')}>
+                    &lt;
+                </div>
                 <div className={styles.navButton} onClick={() => navigate('next')}>
                     &gt;
                 </div>
             </div>
 
-            <div className={styles.pagination}>
-                {originalCards.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`${styles.dot} ${getWrappedIndex(currentIndex) === index ? styles.activeDot : ''}`}
-                        onClick={() => jumpToPage(index)}
-                    />
-                ))}
-            </div>
+            {/*<div className={styles.pagination}>*/}
+            {/*    {originalCards.map((_, index) => (*/}
+            {/*        <span*/}
+            {/*            key={index}*/}
+            {/*            className={`${styles.dot} ${getWrappedIndex(currentIndex) === index ? styles.activeDot : ''}`}*/}
+            {/*            onClick={() => jumpToPage(index)}*/}
+            {/*        />*/}
+            {/*    ))}*/}
+            {/*</div>*/}
         </div>
     )
 }

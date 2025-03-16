@@ -1,5 +1,27 @@
+.card {
+  background: var(--color-primary-5);
+  position: relative;
+  border-radius: 23.48px;
+  padding: 9.97px;
+  display: flex;
+  flex-direction: column;
+  gap: 13.29px;
+
+  @media (min-width: 768px) {
+    gap: 13.38px;
+    padding: 10.04px;
+  }
+
+  @media (min-width: 992px) {
+    gap: 18.82px;
+    padding: 14.11px;
+  }
+}
+
 .image {
   border-radius: 23px;
+  object-position: center;
+  object-fit: cover;
 }
 
 .image {
@@ -13,7 +35,33 @@
 }
 
 .timer {
+  background: var(--color-secondary-20-transparent-35);
+  color: var(--color-primary-5);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 19.93px;
+  right: 17.85px;
+  width: 80px;
+  height: 26.58px;
+  border-radius: 6.64px;
 
+  @media (min-width: 768px) {
+    height: 26.76px;
+    width: 82.91px;
+    border-radius: 6.69px;
+    top: 20.07px;
+    right: 16.64px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 37.64px;
+    width: 116.58px;
+    border-radius: 9.41px;
+    top: 28.23px;
+    right: 23.39px;
+  }
 }
 
 .countdown {
@@ -23,23 +71,71 @@
   gap: 5px;
 }
 
-.timeUnit {
+.name {
+  font-size: 14.95px;
+  line-height: 140%;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+
+  @media (min-width: 768px) {
+    font-size: 15.06px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 21.17px;
+  }
+}
+
+.bid {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.timeValue {
-  font-size: 18px;
-  font-weight: bold;
+.bidName {
+  color: var(--color-accent-5);
+  font-size: 9.97px;
+  letter-spacing: 0.08px;
+  line-height: 150%;
+  vertical-align: middle;
+  font-family: 'Poppins', sans-serif;
+
+  @media (min-width: 768px) {
+    font-size: 10.04px;
+  }
 }
 
-.timeLabel {
-  font-size: 12px;
-  color: #666;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 9.97px;
+
+  @media (min-width: 768px) {
+    gap: 10.04px;
+  }
+
+  @media (min-width: 992px) {
+    gap: 14.12px;
+  }
 }
 
-.timeSeparator {
-  font-size: 18px;
-  font-weight: bold;
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.timeUnit {
+  font-size: 9.97px;
+  line-height: 150%;
+  letter-spacing: 0.08px;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: 10.04px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 14.12px;
+  }
 }

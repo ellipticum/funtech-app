@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { ICard } from '@/shared/interfaces/card'
 import styles from './styles.module.scss'
 import Image from 'next/image'
@@ -15,10 +15,6 @@ interface ITimeRemaining {
     seconds: number
 }
 
-interface ITimeRemainingMap {
-    [key: number]: ITimeRemaining
-}
-
 interface Props extends ICard {}
 
 const Card = ({ id, name, image, price, startsAt, endsAt }: Props) => {
@@ -29,7 +25,7 @@ const Card = ({ id, name, image, price, startsAt, endsAt }: Props) => {
         seconds: 0
     })
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let interval = setInterval(() => {
             const now = new Date().getTime()
 
@@ -65,24 +61,13 @@ const Card = ({ id, name, image, price, startsAt, endsAt }: Props) => {
                     {timeRemaining && (
                         <div className={styles.countdown}>
                             <div className={styles.timeUnit}>
-                                <span className={styles.timeValue}>
-                                    {String(timeRemaining.hours).padStart(2, '0')}
-                                </span>
-                                <span className={styles.timeLabel}>hours</span>
+                                {String(timeRemaining.hours).padStart(2, '0')}h
                             </div>
-                            <span className={styles.timeSeparator}>:</span>
                             <div className={styles.timeUnit}>
-                                <span className={styles.timeValue}>
-                                    {String(timeRemaining.minutes).padStart(2, '0')}
-                                </span>
-                                <span className={styles.timeLabel}>min</span>
+                                {String(timeRemaining.minutes).padStart(2, '0')}m
                             </div>
-                            <span className={styles.timeSeparator}>:</span>
                             <div className={styles.timeUnit}>
-                                <span className={styles.timeValue}>
-                                    {String(timeRemaining.seconds).padStart(2, '0')}
-                                </span>
-                                <span className={styles.timeLabel}>sec</span>
+                                {String(timeRemaining.seconds).padStart(2, '0')}s
                             </div>
                         </div>
                     )}

@@ -1,8 +1,12 @@
 .weekly {
+  background: var(--color-primary-10);
   width: 100%;
-  max-width: 1200px;
+  max-width: 2200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heading {
@@ -34,6 +38,12 @@
   width: 280px;
   padding: 0 10px;
   position: relative;
+}
+
+.navButtons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navButton {

@@ -75,9 +75,18 @@ const Card = ({ id, name, image, price, startsAt, endsAt }: Props) => {
                 <div className={styles.content}>
                     <div className={styles.bid}>
                         <p className={styles.bidName}>Current bid</p>
-                        <p className={styles.bidPrice}>{price}</p>
+                        <div className={styles.bidPriceWrapper}>
+                            <Image
+                                className={styles.bidPriceSign}
+                                src='/images/vector/ether.svg'
+                                alt='_'
+                                width={21}
+                                height={21}
+                            />
+                            <p className={styles.bidPrice}>{price}</p>
+                        </div>
                     </div>
-                    <Button isSpecial>Place bid</Button>
+                    <Button isCompact>Place bid</Button>
                 </div>
             </div>
         </div>

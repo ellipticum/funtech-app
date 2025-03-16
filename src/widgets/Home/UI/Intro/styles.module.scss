@@ -12,5 +12,14 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-block: 160px 119px;
+
+  @media (min-width: 768px) {
+    padding-block: 152px 116px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-block: 202px 154px;
+  }
 }
 

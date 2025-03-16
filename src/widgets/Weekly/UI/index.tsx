@@ -4,71 +4,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import Card from '@/shared/UI/Card'
 import styles from './styles.module.scss'
 import { ICard } from '@/shared/interfaces/card'
+import { originalCards } from '@/widgets/Weekly/model/data/originalCards'
+import { generateRandomPrice } from '@/widgets/Weekly/model/helpers/generateRandomPrice'
 
 const Weekly: React.FC = () => {
-    const generateRandomPrice = (): number => {
-        return Number((Math.random() * 9.5 + 0.5).toFixed(2))
-    }
-
-    const generateTimeframe = (): { startsAt: number; endsAt: number } => {
-        const now = new Date()
-        const start = new Date(now)
-        start.setDate(start.getDate() - Math.floor(Math.random() * 30))
-
-        const end = new Date(now)
-        end.setDate(end.getDate() + Math.floor(Math.random() * 14) + 1)
-
-        return {
-            startsAt: start.getTime(),
-            endsAt: end.getTime()
-        }
-    }
-
-    const originalCards: ICard[] = [
-        {
-            id: 1,
-            name: 'Cosmic Dreamer #1',
-            image: 'nft-1.jpeg',
-            price: generateRandomPrice(),
-            ...generateTimeframe()
-        },
-        {
-            id: 2,
-            name: 'Digital Soul #42',
-            image: 'nft-2.jpeg',
-            price: generateRandomPrice(),
-            ...generateTimeframe()
-        },
-        {
-            id: 3,
-            name: 'Neon Genesis #7',
-            image: 'nft-3.jpeg',
-            price: generateRandomPrice(),
-            ...generateTimeframe()
-        },
-        {
-            id: 4,
-            name: 'Abstract Realm #23',
-            image: 'nft-4.jpeg',
-            price: generateRandomPrice(),
-            ...generateTimeframe()
-        },
-        {
-            id: 5,
-            name: 'Virtual Landscape #11',
-            image: 'nft-5.jpeg',
-            price: generateRandomPrice(),
-            ...generateTimeframe()
-        },
-        {
-            id: 6,
-            name: 'Crypto Punk #301',
-            image: 'nft-3.jpeg',
-            price: generateRandomPrice(),
-            ...generateTimeframe()
-        }
-    ]
-
     const createInfiniteArray = (cards: ICard[]): ICard[] => {
         const prependCards = cards.map((card) => ({
             ...card,

@@ -1,6 +1,7 @@
 .card {
   background: var(--color-primary-5);
   position: relative;
+  width: fit-content;
   border-radius: 23.48px;
   padding: 9.97px;
   display: flex;
@@ -72,10 +73,10 @@
 }
 
 .name {
+  font-family: 'Poppins', sans-serif;
   font-size: 14.95px;
   line-height: 140%;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 
   @media (min-width: 768px) {
     font-size: 15.06px;
@@ -92,6 +93,11 @@
   justify-content: space-between;
 }
 
+.bidPriceWrapper {
+  display: flex;
+  align-items: center;
+}
+
 .bidName {
   color: var(--color-accent-5);
   font-size: 9.97px;
@@ -102,6 +108,10 @@
 
   @media (min-width: 768px) {
     font-size: 10.04px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 14.12px;
   }
 }
 

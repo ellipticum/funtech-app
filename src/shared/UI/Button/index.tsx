@@ -7,15 +7,17 @@ import { Icons } from '../Icons'
 interface Props extends IButtonProps {
     isOutline?: boolean
     isSpecial?: boolean
+    isCompact?: boolean
 }
 
-const Button = ({ className, isOutline, isSpecial, children, ...props }: Props) => {
+const Button = ({ className, isOutline, isSpecial, isCompact, children, ...props }: Props) => {
     return (
         <button
             className={classNames(
                 styles.button,
                 className,
                 { [styles.special]: isSpecial },
+                { [styles.compact]: isCompact },
                 { [styles.outline]: isOutline }
             )}
             {...props}

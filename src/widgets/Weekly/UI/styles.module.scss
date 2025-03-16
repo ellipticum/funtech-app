@@ -4,15 +4,38 @@
   max-width: 2200px;
   margin: 0 auto;
   padding: 40px 0;
+  gap: 63px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 50px 0 64px;
+    gap: 63px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 70px 0 90px;
+    gap: 100px;
+  }
 }
 
 .heading {
+  color: var(--color-primary-15);
   font-size: 24px;
-  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 19.14px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 45px;
+    line-height: 26.92px;
+  }
 }
 
 .swiperContainer {
@@ -35,7 +58,6 @@
 
 .cardWrapper {
   flex-shrink: 0;
-  width: 280px;
   padding: 0 10px;
   position: relative;
 }

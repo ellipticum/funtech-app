@@ -6,14 +6,14 @@ import IntroImages from '@/widgets/Home/UI/IntroImages'
 
 const Intro = () => {
     return (
-        <div className={styles.intro}>
+        <section className={styles.intro}>
             <Container>
                 <div className={styles.wrapper}>
                     <IntroContent />
                     <IntroImages />
                 </div>
             </Container>
-        </div>
+        </section>
     )
 }
 

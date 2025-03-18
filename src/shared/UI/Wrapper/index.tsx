@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { ILayoutProps } from '@/shared/interfaces/layoutProps'
 import Header from '@/widgets/Header/UI'
-import Footer from '@/widgets/Footer/UI'
+import Footer from '@/widgets/Footer/UI/Footer'
 import Main from '@/shared/UI/Main'
 
 interface Props extends ILayoutProps {}

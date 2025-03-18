@@ -1,0 +1,25 @@
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    gap: 40px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 53px;
+  }
+}
+
+.button {
+  width: fit-content;
+  height: fit-content;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-position: center;
+  object-fit: contain;
+}

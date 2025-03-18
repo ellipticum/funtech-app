@@ -8,17 +8,33 @@ interface Props extends IButtonProps {
     isOutline?: boolean
     isSpecial?: boolean
     isCompact?: boolean
+    isMini?: boolean
+    isInverted?: boolean
+    isUppercase?: boolean
 }
 
-const Button = ({ className, isOutline, isSpecial, isCompact, children, ...props }: Props) => {
+const Button = ({
+    className,
+    isInverted,
+    isOutline,
+    isSpecial,
+    isCompact,
+    isMini,
+    children,
+    isUppercase = true,
+    ...props
+}: Props) => {
     return (
         <button
             className={classNames(
                 styles.button,
                 className,
+                { [styles.mini]: isMini },
+                { [styles.inverted]: isInverted },
                 { [styles.special]: isSpecial },
                 { [styles.compact]: isCompact },
-                { [styles.outline]: isOutline }
+                { [styles.outline]: isOutline },
+                { [styles.uppercase]: isUppercase }
             )}
             {...props}
         >

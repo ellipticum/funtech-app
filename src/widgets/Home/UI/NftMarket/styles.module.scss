@@ -1,0 +1,149 @@
+.nftMarket {
+  min-height: 300px;
+}
+
+.wrapper {
+  color: var(--color-primary-5);
+  background: var(--color-secondary-5);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+  gap: 37px;
+  padding: 22px 40px;
+  border-radius: 15px;
+  max-height: 211px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 21px;
+    padding: 31px 46px;
+    width: 100%;
+    max-height: unset;
+  }
+
+  @media (min-width: 1100px) {
+    border-radius: 30px;
+    padding: 44px 66px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  @media (min-width: 768px) {
+    align-items: start;
+    gap: 35px;
+  }
+
+  @media (min-width: 1100px) {
+    gap: 50px;
+  }
+}
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  @media (min-width: 768px) {
+    align-items: start;
+    gap: 12px;
+  }
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  line-height: 130%;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 1100px) {
+    font-size: 45px;
+  }
+}
+
+.description {
+  color: var(--color-primary-30);
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.04px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  opacity: 60%;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1100px) {
+    font-size: 20px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.image,
+.imageWrapper {
+
+}
+
+.imageWrapper {
+  position: relative;
+  width: 252px;
+  height: 129px;
+
+  @media (min-width: 768px) {
+    width: 262px;
+    height: 167px;
+  }
+
+  @media (min-width: 1100px) {
+    width: 369px;
+    height: 249px;
+  }
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 9px;
+  z-index: 5;
+
+  @media (min-width: 768px) {
+    border-radius: 11px;
+  }
+
+  @media (min-width: 1100px) {
+    border-radius: 16px;
+  }
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+
+  filter: blur(50px);
+  transform: translate(-5px, 5px);
+}

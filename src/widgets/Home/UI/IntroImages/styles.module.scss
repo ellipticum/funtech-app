@@ -1,9 +1,13 @@
 .introImages {
+  width: calc(100% + 27px * 2);
   display: flex;
   position: relative;
   height: 290px;
-  overflow: hidden;
   margin-inline: -27px;
+
+  @media (min-width: 450px) {
+    width: 450px;
+  }
 
   @media (min-width: 768px) {
     width: 570px;
@@ -52,15 +56,20 @@
   left: 259px;
   width: 170.89px;
   height: 182.89px;
+  z-index: 5;
 
   @media (min-width: 768px) {
     width: 226px;
     height: 229px;
+    left: 305px;
+    top: 128px;
   }
 
   @media (min-width: 1200px) {
     width: 319px;
     height: 322px;
+    left: 429px;
+    top: 181px;
   }
 }
 
@@ -68,6 +77,19 @@
   width: 92px;
   height: 213px;
   left: 328px;
+  object-fit: contain;
+
+  @media (min-width: 768px) {
+    width: 124px;
+    height: 284px;
+    left: 400px;
+    top: -50px;
+  }
+
+  @media (min-width: 1200px) {
+    left: 615px;
+    top: -50px;
+  }
 }
 
 .arrow {
@@ -75,4 +97,16 @@
   height: 56px;
   left: 248px;
   top: 40px;
+
+  @media (min-width: 768px) {
+    width: 91px;
+    height: 88px;
+    left: 285px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 128px;
+    height: 124px;
+    left: 425px;
+  }
 }

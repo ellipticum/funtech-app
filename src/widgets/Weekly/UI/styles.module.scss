@@ -1,4 +1,5 @@
 .weekly {
+  overflow: hidden;
   background: var(--color-primary-10);
   width: 100%;
   max-width: 2200px;
@@ -11,7 +12,7 @@
 
   @media (min-width: 768px) {
     padding: 50px 0 64px;
-    gap: 63px;
+    gap: 70px;
   }
 
   @media (min-width: 1200px) {
@@ -38,64 +39,107 @@
   }
 }
 
-.swiperContainer {
+.emblaWrapper {
+  width: 100%;
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
+}
+
+.embla {
   overflow: hidden;
-}
-
-.swiperWrapper {
   width: 100%;
-  overflow: hidden;
+  position: relative;
 }
 
-.cards {
+.emblaContainer {
   display: flex;
-  transition: transform 0.3s ease;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.cardWrapper {
-  flex-shrink: 0;
+.emblaSlide {
+  flex: 0 0 auto;
   padding: 0 10px;
   position: relative;
 }
 
 .navButtons {
+  background: var(--color-primary-5);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   gap: 4px;
+  margin-top: 30px;
 }
 
 .navButton {
-  width: 40px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  padding: 13px;
+  border: none;
+  background: transparent;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   z-index: 10;
-}
+  transition: opacity 0.3s ease;
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 8px;
-}
+  @media (min-width: 768px) {
+    padding: 16px;
+  }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-}
+  @media (min-width: 1200px) {
+    padding: 22px;
+  }
 
-.activeDot {
-  background: #333;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  & .icon {
+    width: 16px;
+    height: 16px;
+
+    @media (min-width: 768px) {
+      width: 19px;
+      height: 19px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &:first-child {
+    padding-right: 21px;
+
+    @media (min-width: 768px) {
+      padding-right: 25px;
+    }
+
+    @media (min-width: 1200px) {
+      padding-right: 35px;
+    }
+  }
+
+  &:last-child {
+    padding-left: 21px;
+
+    @media (min-width: 768px) {
+      padding-left: 25px;
+    }
+
+    @media (min-width: 1200px) {
+      padding-left: 35px;
+    }
+
+    & .icon {
+      transform: rotate(180deg);
+    }
+  }
 }

@@ -1,0 +1,100 @@
+.carousel {
+  position: relative;
+
+  &.limitedContainer {
+    overflow: visible;
+
+    width: min(100%, var(--container-width));
+
+    padding-inline: 16px;
+
+    margin: 0 auto;
+
+    @media (min-width: 992px) {
+      padding-inline: 20px;
+    }
+
+    @media (min-width: 1480px) {
+      padding-inline: 0;
+    }
+
+    & .viewport {
+      overflow: visible;
+    }
+
+    & .container {
+      overflow: visible;
+    }
+
+    &.noIndent {
+      padding-inline: 0 !important;
+    }
+  }
+
+  &.extendBeyond {
+    overflow: visible;
+
+    & .viewport {
+      overflow: visible;
+    }
+  }
+
+  &.truncated {
+    & .viewport {
+      overflow: hidden !important;
+
+      margin-inline: -16px;
+      padding-inline: 16px;
+
+      @media (min-width: 992px) {
+        margin-inline: -20px;
+        padding-inline: 20px;
+      }
+
+      @media (min-width: 1480px) {
+        margin-inline: 0;
+        padding-inline: 0;
+      }
+    }
+  }
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+
+  gap: var(--gap);
+  height: var(--height);
+}
+
+.slide {
+  display: flex;
+
+  flex: 0 0 auto;
+
+  width: calc(100% / var(--slidesToShow) - var(--gap) + var(--gap) / var(--slidesToShow));
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prevButton {
+  left: 0;
+}
+
+.nextButton {
+  right: 0;
+}
+

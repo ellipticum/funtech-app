@@ -59,7 +59,8 @@ button {
   cursor: pointer;
 }
 
-button {
+button,
+button * {
   user-select: none;
 }
 

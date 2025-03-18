@@ -1,5 +1,5 @@
 export interface ICard {
-    id: number
+    id: string
     price: number
     endsAt: number
     startsAt: number

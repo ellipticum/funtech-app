@@ -9,7 +9,6 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 import Image from 'next/image'
 import classNames from 'classnames'
 
-// Generate random card data
 const generateCards = (count: number): ICard[] => {
     return Array.from({ length: count }, (_, i) => {
         const now = new Date().getTime()
@@ -19,20 +18,18 @@ const generateCards = (count: number): ICard[] => {
             price: parseFloat((Math.random() * 5 + 0.1).toFixed(2)),
             startsAt: now,
             endsAt: now + 1000 * 60 * 60 * 24 * (Math.floor(Math.random() * 3) + 1),
-            image: `intro-image-1.jpeg`
+            image: `nft-${(i % 5) + 1}.jpeg`
         }
     })
 }
 
 const Weekly = () => {
-    // Generate enough cards to ensure infinite scrolling appearance
     const [cards, setCards] = useState<ICard[]>(generateCards(20))
 
-    // Configure Embla Carousel
     const [emblaRef, emblaApi] = useEmblaCarousel(
         {
             loop: true,
-            align: 'start',
+            align: 'center',
             dragFree: true,
             containScroll: false
         },
@@ -42,14 +39,12 @@ const Weekly = () => {
     const [canScrollPrev, setCanScrollPrev] = useState(false)
     const [canScrollNext, setCanScrollNext] = useState(true)
 
-    // Update scroll state
     const updateScrollState = useCallback(() => {
         if (!emblaApi) return
         setCanScrollPrev(emblaApi.canScrollPrev())
         setCanScrollNext(emblaApi.canScrollNext())
     }, [emblaApi])
 
-    // Setup event listeners
     useEffect(() => {
         if (emblaApi) {
             emblaApi.on('select', updateScrollState)
@@ -64,7 +59,6 @@ const Weekly = () => {
         }
     }, [emblaApi, updateScrollState])
 
-    // Scroll functions
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
     }, [emblaApi])
@@ -73,7 +67,6 @@ const Weekly = () => {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi])
 
-    // Update card prices randomly
     useEffect(() => {
         const interval = setInterval(() => {
             setCards((prevCards) =>
@@ -82,14 +75,14 @@ const Weekly = () => {
                     price: parseFloat((card.price + (Math.random() * 0.2 - 0.1)).toFixed(2))
                 }))
             )
-        }, 5000) // Update every 5 seconds
+        }, 5000)
 
         return () => clearInterval(interval)
     }, [])
 
     return (
         <section className={styles.weekly}>
-            <h2 className={styles.title}>Weekly Auctions</h2>
+            <h2 className={styles.heading}>Weekly - Top NFT</h2>
             <div className={styles.carouselWrapper}>
                 <div className={styles.viewport} ref={emblaRef}>
                     <div className={styles.container}>
@@ -100,7 +93,6 @@ const Weekly = () => {
                         ))}
                     </div>
                 </div>
-
                 <div className={styles.navigation}>
                     <button
                         className={classNames(styles.navButton, {
@@ -116,6 +108,7 @@ const Weekly = () => {
                             height={24}
                         />
                     </button>
+                    <div className={styles.divider} />
                     <button
                         className={classNames(styles.navButton, styles.scrollNext, {
                             [styles.disabled]: !canScrollNext

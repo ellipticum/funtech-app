@@ -9,6 +9,7 @@ interface Props extends IButtonProps {
     isSpecial?: boolean
     isCompact?: boolean
     isMini?: boolean
+    isLarge?: boolean
     isInverted?: boolean
     isUppercase?: boolean
 }
@@ -20,6 +21,7 @@ const Button = ({
     isSpecial,
     isCompact,
     isMini,
+    isLarge,
     children,
     isUppercase = true,
     ...props
@@ -29,6 +31,7 @@ const Button = ({
             className={classNames(
                 styles.button,
                 className,
+                { [styles.large]: isLarge },
                 { [styles.mini]: isMini },
                 { [styles.inverted]: isInverted },
                 { [styles.special]: isSpecial },

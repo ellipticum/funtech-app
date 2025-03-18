@@ -10,11 +10,26 @@
   @media (min-width: 1200px) {
     gap: 53px;
   }
+
+  &.large {
+    gap: 35px;
+
+    & .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
 .button {
   width: fit-content;
   height: fit-content;
+
+  &:hover {
+    & .icon {
+      filter: brightness(200%);
+    }
+  }
 }
 
 .icon {
@@ -22,4 +37,5 @@
   height: 20px;
   object-position: center;
   object-fit: contain;
+  transition: 200ms all ease-in-out;
 }

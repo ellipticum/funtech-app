@@ -1,30 +1,17 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import Logo from '@/shared/UI/Logo'
 import Link from 'next/link'
 import Container from '@/shared/UI/Container'
 import Button from '@/shared/UI/Button'
 import Image from 'next/image'
+import { navbarLinks } from '@/shared/data/navbarLinks'
+import { useNavbar } from '@/app/providers/NavbarProvider'
 
 const Header = () => {
-    const links = [
-        {
-            name: 'Discover',
-            href: '#'
-        },
-        {
-            name: 'Creators',
-            href: '#'
-        },
-        {
-            name: 'Sell',
-            href: '#'
-        },
-        {
-            name: 'Stats',
-            href: '#'
-        }
-    ]
+    const { isHidden, setIsHidden } = useNavbar()
 
     return (
         <header className={styles.header}>
@@ -34,7 +21,7 @@ const Header = () => {
                         <div className={styles.info}>
                             <Logo isLight={false} />
                             <nav className={styles.navbar}>
-                                {links.map((link) => {
+                                {navbarLinks.map((link) => {
                                     return (
                                         <Link className={styles.link} href={link.href}>
                                             {link.name}
@@ -47,8 +34,16 @@ const Header = () => {
                     </div>
                     <div className={styles.mobileView}>
                         <Logo isLight={false} hasName />
-                        <button className={styles.menuButton}>
-                            <Image src='/images/vector/menu.svg' alt='_' width={31} height={22} />
+                        <button
+                            className={styles.menuButton}
+                            onClick={() => setIsHidden((prevState) => !prevState)}
+                        >
+                            <Image
+                                src={`/images/vector/${isHidden ? 'menu' : 'cross'}.svg`}
+                                alt='_'
+                                width={31}
+                                height={22}
+                            />
                         </button>
                     </div>
                 </div>

@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import classNames from 'classnames'
 
-const IntroImages = () => {
+interface IntroImagesProps {}
+
+const IntroImages: React.FC<IntroImagesProps> = () => {
+    const containerRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.classList.add(styles.visible)
+        }
+    }, [])
+
     return (
-        <div className={styles.introImages}>
+        <div className={styles.introImages} ref={containerRef}>
             <Image
                 className={classNames(styles.image, styles.first)}
                 src='/images/raster/intro-image-1.jpeg'

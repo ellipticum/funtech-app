@@ -2,20 +2,20 @@
   background: var(--color-primary-5);
   position: relative;
   width: fit-content;
-  border-radius: 23.48px;
-  padding: 9.97px;
+  border-radius: 23px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 13.29px;
+  gap: 13px;
 
   @media (min-width: 768px) {
-    gap: 13.38px;
-    padding: 10.04px;
+    gap: 13px;
+    padding: 10px;
   }
 
   @media (min-width: 992px) {
-    gap: 18.82px;
-    padding: 14.11px;
+    gap: 19px;
+    padding: 14px;
   }
 }
 
@@ -49,19 +49,19 @@
   border-radius: 6.64px;
 
   @media (min-width: 768px) {
-    height: 26.76px;
-    width: 82.91px;
-    border-radius: 6.69px;
-    top: 20.07px;
-    right: 16.64px;
+    height: 27px;
+    width: 83px;
+    border-radius: 7px;
+    top: 20px;
+    right: 17px;
   }
 
   @media (min-width: 1200px) {
-    height: 37.64px;
-    width: 116.58px;
-    border-radius: 9.41px;
-    top: 28.23px;
-    right: 23.39px;
+    height: 38px;
+    width: 117px;
+    border-radius: 10px;
+    top: 28px;
+    right: 23px;
   }
 }
 

@@ -3,12 +3,14 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import classNames from 'classnames'
 
 interface Props {
     isLight?: boolean
+    isLarge?: boolean
 }
 
-const Social = ({ isLight = true }: Props) => {
+const Social = ({ isLight = true, isLarge = false }: Props) => {
     const buttons = [
         {
             href: '#',
@@ -29,7 +31,7 @@ const Social = ({ isLight = true }: Props) => {
     ]
 
     return (
-        <div className={styles.social}>
+        <div className={classNames(styles.social, { [styles.large]: isLarge })}>
             {buttons.map((button) => {
                 return (
                     <button

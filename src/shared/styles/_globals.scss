@@ -15,6 +15,10 @@ body {
 
 body {
   font-family: 'Inter', sans-serif;
+
+  &.overflowHidden {
+    overflow: hidden;
+  }
 }
 
 h1,

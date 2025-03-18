@@ -52,6 +52,11 @@ table {
 a {
   text-decoration: none;
   color: inherit;
+  transition: 200ms all ease-in-out;
+
+  &:hover {
+    filter: brightness(150%);
+  }
 }
 
 a,

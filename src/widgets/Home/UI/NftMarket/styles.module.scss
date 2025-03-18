@@ -1,5 +1,14 @@
 .nftMarket {
-  min-height: 300px;
+  min-height: 515px;
+  padding-block: 115px 100px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 113px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-bottom: 160px;
+  }
 }
 
 .wrapper {
@@ -70,6 +79,7 @@
 
   @media (min-width: 768px) {
     font-size: 32px;
+    text-align: start;
   }
 
   @media (min-width: 1100px) {
@@ -116,7 +126,7 @@
     height: 167px;
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 992px) {
     width: 369px;
     height: 249px;
   }

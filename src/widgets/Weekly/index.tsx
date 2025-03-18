@@ -67,6 +67,15 @@ const Weekly = () => {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi])
 
+    // Автоплей: переход к следующему слайду каждые 3 секунды
+    useEffect(() => {
+        if (!emblaApi) return
+        const autoplayInterval = setInterval(() => {
+            emblaApi.scrollNext()
+        }, 3000)
+        return () => clearInterval(autoplayInterval)
+    }, [emblaApi])
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCards((prevCards) =>

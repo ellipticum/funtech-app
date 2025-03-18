@@ -19,6 +19,14 @@ body {
   &.overflowHidden {
     overflow: hidden;
   }
+
+  @media (min-width: 2048px) {
+    zoom: 1.5;
+  }
+
+  @media (min-width: 4096px) {
+    zoom: 2.25;
+  }
 }
 
 h1,

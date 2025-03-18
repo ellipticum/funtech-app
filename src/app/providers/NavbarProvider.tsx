@@ -30,7 +30,7 @@ interface Props {
 }
 
 const NavbarProvider = ({ children }: Props) => {
-    const [isHidden, setIsHidden] = useState<boolean>(false)
+    const [isHidden, setIsHidden] = useState<boolean>(true)
 
     useEffect(() => {
         if (isHidden) {

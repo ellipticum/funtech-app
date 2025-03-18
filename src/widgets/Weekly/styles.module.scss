@@ -1,0 +1,99 @@
+.weekly {
+  background: var(--color-primary-10);
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: min(100%, 2000px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.slide {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+.scrollNext {
+  & img {
+    rotate: 180deg;
+  }
+}
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+}
